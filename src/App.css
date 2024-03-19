@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-game {
+    width: 400px;
+    height: 400px;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.board-game span {
+    width: 33.3333%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 30px;
+    position: relative;
+    outline: 1px solid #ccc;
+    cursor: pointer; /* Adicionei aqui para tornar todos os quadrados do jogo clicáveis */
+}
+
+.board-game span:hover {
+    background: white;
+}
+
+.board-game span.horizontal-line::after,
+.board-game span.vertical-line::after,
+.board-game span.diagonal-1::after,
+.board-game span.diagonal-2::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 10px;
+    background: black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.board-game span.horizontal-line::after {
+    display: block;
+}
+
+.board-game span.vertical-line::after {
+    display: block;
+    transform: rotate(90deg); /* Rotate a linha vertical */
+}
+
+.board-game span.diagonal-1::after {
+    display: block;
+    transform: rotate(145deg); /* Rotate a linha diagonal */
+}
+
+.board-game span.diagonal-2::after {
+    display: block;
+    transform: rotate(135deg); /* Rotate a linha diagonal */
+}
+
+abbr {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
