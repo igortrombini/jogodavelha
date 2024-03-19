@@ -52,7 +52,7 @@ function App() {
 
   useEffect(() => {
     if (winningCombo) {
-      alert('Jogo teve um vencedor.')
+      alert('Jogo teve um vencedor!.')
     }
 
   }, [winningCombo]);
