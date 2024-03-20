@@ -94,6 +94,12 @@ function App() {
     console.log({ winner });
   };
 
+  const restartGame = () => {
+    setGameData([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    setTurn(1);
+    setWinningCombo(null);
+  }
+
   return (
     <div className='board-game'>
       {gameData.map((value, index) => (
@@ -102,16 +108,19 @@ function App() {
         }}
           key={index}
           className={
-            winningCombo && winningCombo.indexes.includes(index)
+            winningCombo?.indexes.includes(index)
               ? winningCombo.orientation
               : undefined
           }
         >
-          <abbr title=''>{index}</abbr>
+          {/* <abbr title=''>{index}</abbr> Comentando esta linha para ocultar o índice */}
           {value === 1 && '❌'}
           {value === 2 && '⭕'}
         </span>
       ))}
+      <div>
+        <button onClick={restartGame}>Restart Game</button>
+      </div>
     </div>
   );
 }
